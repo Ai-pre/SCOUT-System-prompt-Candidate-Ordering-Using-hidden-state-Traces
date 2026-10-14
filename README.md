@@ -42,7 +42,7 @@ flowchart TD
 ```
 
 - **Behavioral evaluation:** 서로 다른 system prompt로 여러 과제의 정확도를 측정
-- **Activation extraction:** \`Δh = h(prompt) − h(base prompt)\`를 layer/token position별 추출
+- **Activation extraction:** `Δh = h(prompt) − h(base prompt)`를 layer/token position별 추출
 - **Analysis:** Ridge/activation 비교를 통해 전이 성능과 내부 표현의 관계를 검토
 - **Controls:** 길이·출력 형식·paraphrase와 같은 혼란 요인을 별도 분석
 
@@ -53,7 +53,7 @@ flowchart TD
 | Seen tasks | GSM8K, CSQA |
 | Unseen tasks | SVAMP, BoolQ |
 | Model families | Qwen, Llama, Gemma |
-| Activation locations | \`system_last_token\`, \`first_user_token\`; early/mid/late layers |
+| Activation locations | `system_last_token`, `first_user_token`; early/mid/late layers |
 
 [Lab meeting notes →](docs/lab_meeting_final_ko.md)
 
@@ -71,7 +71,7 @@ flowchart TD
 
 ### 02 · Smaller prompting cues mattered
 
-\`concise\`, \`careful\`, 최소한의 정답 형식 지정처럼 **간결한 지시 계열**이 강한 전문가 역할 부여나 긴 단계별 추론 지시보다 안정적으로 나타나는 경향을 관찰했습니다. 다만 최적 조합은 모델마다 달랐습니다.
+`concise`, `careful`, 최소한의 정답 형식 지정처럼 **간결한 지시 계열**이 강한 전문가 역할 부여나 긴 단계별 추론 지시보다 안정적으로 나타나는 경향을 관찰했습니다. 다만 최적 조합은 모델마다 달랐습니다.
 
 ### 03 · A failed selector was an important result
 
@@ -85,13 +85,13 @@ flowchart TD
 
 | Path | Purpose |
 |:--|:--|
-| [\`scripts/run_eval.py\`](scripts/run_eval.py) | Prompt별 모델 출력과 행동 성능 평가 |
-| [\`scripts/extract_activation.py\`](scripts/extract_activation.py) | Hidden-state extraction, \`Δh\` features |
-| [\`scripts/run_analysis.py\`](scripts/run_analysis.py) | Transfer/activation diagnostics |
-| [\`scripts/run_length_confound_analysis.py\`](scripts/run_length_confound_analysis.py) | 출력 길이 등 confound 점검 |
-| [\`configs/\`](configs/) | 모델·과제별 실행 설정 |
-| [\`data/\`](data/) | 프롬프트 및 데이터 입력 포맷 |
-| [\`docs/\`](docs/) | 실험 결과 및 연구 회고 |
+| [`scripts/run_eval.py`](scripts/run_eval.py) | Prompt별 모델 출력과 행동 성능 평가 |
+| [`scripts/extract_activation.py`](scripts/extract_activation.py) | Hidden-state extraction, `Δh` features |
+| [`scripts/run_analysis.py`](scripts/run_analysis.py) | Transfer/activation diagnostics |
+| [`scripts/run_length_confound_analysis.py`](scripts/run_length_confound_analysis.py) | 출력 길이 등 confound 점검 |
+| [`configs/`](configs/) | 모델·과제별 실행 설정 |
+| [`data/`](data/) | 프롬프트 및 데이터 입력 포맷 |
+| [`docs/`](docs/) | 실험 결과 및 연구 회고 |
 | [Original detailed README](docs/README_BEFORE_PORTFOLIO_REFRESH.md) | 기존 전체 실험 설정·프롬프트 출처·실행 기록 |
 
 ## Reproduce
